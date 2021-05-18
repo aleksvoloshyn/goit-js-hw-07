@@ -17,21 +17,16 @@ const images = [
 ];
 
 /**ul галерея */
-const galaryEl = document.querySelector('#gallery');
+const galeryEl = document.querySelector('#gallery');
 
-const elements = []; //массив лишек с влож картинками
-
-for (let i = 0; i < images.length; i += 1) {
+const elements = images.map(option => {
   const listEl = document.createElement('li');
   const imgEl = document.createElement('img');
-  imgEl.src = images[i].url;
-  imgEl.alt = images[i].alt;
+  imgEl.src = option.url;
+  imgEl.alt = option.alt;
   listEl.appendChild(imgEl);
-  elements.push(listEl);
-}
+  return listEl;
+});
 
-for (let i = 0; i < elements.length; i += 1) {
-  galaryEl.appendChild(elements[i]);
-}
-
-console.log(galaryEl);
+galeryEl.append(...elements);
+console.log(galeryEl);
