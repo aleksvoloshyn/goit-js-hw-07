@@ -16,17 +16,12 @@ const images = [
   },
 ];
 
-/**ul галерея */
 const galeryEl = document.querySelector('#gallery');
 
-const elements = images.map(option => {
-  const listEl = document.createElement('li');
-  const imgEl = document.createElement('img');
-  imgEl.src = option.url;
-  imgEl.alt = option.alt;
-  listEl.appendChild(imgEl);
-  return listEl;
+const allElements = images.map(option => {
+  return `<li><img src=${option.url} alt = ${option.alt}></li>`;
 });
 
-galeryEl.append(...elements);
-console.log(galeryEl);
+galeryEl.insertAdjacentHTML('afterbegin', allElements);
+
+galeryEl.classList.add('galery-style-js');

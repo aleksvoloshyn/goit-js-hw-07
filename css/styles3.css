@@ -1,14 +1,9 @@
-#gallery {
+.galery-style-js {
   display: flex;
-  justify-content: center;
   list-style: none;
 }
 
 img {
-  width: 480x;
-  height: 320px;
-}
-
-li {
-  margin-right: 8px;
+  width: 600px;
+  height: 400px;
 }
