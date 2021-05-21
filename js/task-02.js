@@ -9,15 +9,11 @@ const ingredients = [
 
 const listOfItemEl = document.querySelector('#ingredients');
 
-const arOfElements = [];
-for (let i = 0; i < ingredients.length; i += 1) {
+const arrayOfElementsList = ingredients.map(option => {
   const itemEl = document.createElement('li');
-  itemEl.textContent = ingredients[i];
-  arOfElements.push(itemEl);
-}
+  itemEl.textContent = option;
+  return itemEl;
+});
 
-for (let i = 0; i < arOfElements.length; i += 1) {
-  listOfItemEl.appendChild(arOfElements[i]);
-}
-
+listOfItemEl.append(...arrayOfElementsList);
 console.log(listOfItemEl);
